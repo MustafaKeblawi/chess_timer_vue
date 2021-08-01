@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <SettingsPanel/>
-    <Timer/>
+    <Timer v-bind:durations="[100000, 90000]"/>
   </div>
 </template>
 
