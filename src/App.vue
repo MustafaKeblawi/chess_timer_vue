@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <SettingsPanel/>
-    <Timer v-bind:durations="[100000, 90000]"/>
+    {{times}}
+    <SettingsPanel v-model="times" v-if="!started" @start="started = true"/>
+    <Timer v-bind:durations="times"/>
   </div>
 </template>
 
@@ -13,6 +14,12 @@ export default {
   components: {
     SettingsPanel,
     Timer
+  },
+  data () {
+    return {
+      times: [100000, 10000],
+      started: false,
+    }
   }
 }
 </script>

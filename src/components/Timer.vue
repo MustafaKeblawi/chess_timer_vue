@@ -25,8 +25,12 @@ export default {
     }
   },
   mounted() {
-    this.playerCount = this.durations.length
-    console.log(this.durations)
+    this.playerCount = this.durations.length;
+  },
+  watch: {
+    durations () {
+      this.playerCount = this.durations.length;
+    }
   },
   methods: {
     updateState: function (player) {

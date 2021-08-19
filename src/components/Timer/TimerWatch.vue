@@ -39,7 +39,6 @@ export default {
   mounted() {
     this.timer = new StopTimer(this.duration);
     this.time = msToString(this.timer.getTimeLeft());
-    console.log(this.frequency)
     if (this.on) this.start();
   },
   watch: {
